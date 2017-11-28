@@ -15,7 +15,6 @@ class OriginCountryMigration extends Migration
     {
         Schema::create('origin_countries', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('recipe_id');
             $table->string('title')->unique();
             $table->boolean('enabled')->default(TRUE);
             $table->timestamps();

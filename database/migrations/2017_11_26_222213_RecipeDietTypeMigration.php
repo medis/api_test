@@ -15,7 +15,6 @@ class RecipeDietTypeMigration extends Migration
     {
         Schema::create('recipe_diet_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('recipe_id');
             $table->string('title')->unique();
             $table->boolean('enabled')->default(TRUE);
             $table->timestamps();

@@ -14,8 +14,8 @@ class OriginCountry extends BaseModel
         'title'
     ];
 
-    public function recipe() {
-        $this->belongsTo(Recipe::class);
+    public function recipes() {
+        return $this->hasMany(Recipe::class);
     }
 
 }

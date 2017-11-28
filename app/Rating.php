@@ -15,7 +15,7 @@ class Rating extends BaseModel
     ];
 
     public function recipe() {
-        $this->belongsTo(Recipe::class);
+        return $this->belongsTo(Recipe::class);
     }
 
 }

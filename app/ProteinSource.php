@@ -15,7 +15,7 @@ class ProteinSource extends BaseModel
     ];
 
     public function recipe() {
-        $this->belongsTo(Recipe::class);
+        return $this->hasMany(Recipe::class);
     }
 
 }

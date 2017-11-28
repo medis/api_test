@@ -24,7 +24,8 @@
         "classmap": [
             "tests/",
             "database/"
-        ]
+        ],
+        "files": ["tests/utilities/functions.php"]
     },
     "scripts": {
         "post-root-package-install": [

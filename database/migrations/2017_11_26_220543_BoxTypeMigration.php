@@ -15,7 +15,6 @@ class BoxTypeMigration extends Migration
     {
         Schema::create('box_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('recipe_id');
             $table->string('title')->unique();
             $table->boolean('enabled')->default(TRUE);
             $table->timestamps();

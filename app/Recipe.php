@@ -18,38 +18,38 @@ class Recipe extends BaseModel
     ];
 
     public function ratings() {
-        $this->hasMany(Rating::class);
+        return $this->hasMany(Rating::class);
     }
 
     public function boxType() {
-        $this->hasOne(BoxType::class);
+        return $this->belongsTo(BoxType::class);
     }
 
     public function recipeDietType() {
-        $this->hasOne(RecipeDietType::class);
+        return $this->belongsTo(RecipeDietType::class);
     }
 
     public function season() {
-        $this->hasOne(Season::class);
+        return $this->belongsTo(Season::class);
     }
 
     public function base() {
-        $this->hasOne(Base::class);
+        return $this->belongsTo(Base::class);
     }
 
     public function proteinSource() {
-        $this->hasOne(ProteinSource::class);
+        return $this->belongsTo(ProteinSource::class);
     }
 
     public function equipmentNeeded() {
-        $this->hasOne(EquipmentNeeded::class);
+        return $this->belongsTo(EquipmentNeeded::class);
     }
 
     public function originCountry() {
-        $this->hasOne(OriginCountry::class);
+        return $this->belongsTo(OriginCountry::class);
     }
 
     public function recipeCuisine() {
-        $this->hasOne(RecipeCuisine::class);
+        return $this->belongsTo(RecipeCuisine::class);
     }
 }

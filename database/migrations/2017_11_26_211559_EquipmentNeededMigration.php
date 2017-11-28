@@ -15,7 +15,6 @@ class EquipmentNeededMigration extends Migration
     {
         Schema::create('equipment_needed', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('recipe_id');
             $table->string('title')->unique();
             $table->boolean('enabled')->default(TRUE);
             $table->timestamps();
