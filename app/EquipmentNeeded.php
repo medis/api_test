@@ -16,7 +16,7 @@ class EquipmentNeeded extends BaseModel
 
     protected $table = 'equipment_needed';
 
-    public function recipe() {
+    public function recipes() {
         return $this->hasMany(Recipe::class);
     }
 

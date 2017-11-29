@@ -14,7 +14,7 @@ class RecipeCuisine extends BaseModel
         'title'
     ];
 
-    public function recipe() {
+    public function recipes() {
         return $this->hasMany(Recipe::class);
     }
 
