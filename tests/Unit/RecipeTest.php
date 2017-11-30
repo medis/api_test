@@ -29,7 +29,7 @@ class RecipeTest extends TestCase
 
     /** @test */
     public function a_recipe_has_reverse_relationships() {
-        $title = 'Sweet Chilli and Lime Beef on a Crunchy Fresh Noodle Salad';
+        $title = Recipe::first()->title;
         $this->assertEquals($title, $this->getRecipeTitle(\App\BoxType::class));
         $this->assertEquals($title, $this->getRecipeTitle(\App\RecipeDietType::class));
         $this->assertEquals($title, $this->getRecipeTitle(\App\Season::class));
