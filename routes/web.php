@@ -11,7 +11,11 @@
 |
 */
 
-$router->get('/', ['middleware' => ['memory_db'], function () use ($router) {
-    return \App\Recipe::all();
+$router->get('/', function() use ($router) {
     return $router->app->version();
-}]);
+});
+
+$router->group(['prefix' => 'api/v1', 'middleware' => 'memory_db'], function () use ($router) {
+    $router->get('recipes', ['uses' => 'RecipeController@index']);
+    $router->get('recipes/{id}', ['uses' => 'RecipeController@show']);
+});
