@@ -17,12 +17,12 @@ class RecipeController extends Controller
     }
 
     public function index() {
-        return Recipe::all();
+        return Recipe::paginate(5);
     }
 
     public function show($id) {
         if ($recipe = Recipe::find($id)) {
-            return new RecipeResource(Recipe::find($id));
+            return new RecipeResource($recipe);
         }
 
         return $this->notFoundResponse();
