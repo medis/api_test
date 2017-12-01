@@ -2,27 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Resources\Json\Resource;
 use App\Http\Resources\RecipeResource;
 use App\Recipe;
 
-class RecipeController extends Controller
+abstract class BaseRecipeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct() {
-        //
+    public function __construct($resource) {
+        $this->resource = $resource;
     }
 
-    public function index() {
+    protected function index() {
         return Recipe::paginate(5);
     }
 
     public function show($id) {
         if ($recipe = Recipe::find($id)) {
-            return new RecipeResource($recipe);
+            return new $this->resource($recipe);
         }
 
         return $this->notFoundResponse();

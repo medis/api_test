@@ -16,6 +16,8 @@ $router->get('/', function() use ($router) {
 });
 
 $router->group(['prefix' => 'api/v1', 'middleware' => 'memory_db'], function () use ($router) {
-    $router->get('recipes', ['uses' => 'RecipeController@index']);
-    $router->get('recipes/{id}', ['uses' => 'RecipeController@show']);
+    // $router->get('recipes', ['uses' => 'RecipeController@index']);
+    $router->get('recipes/{id}/mobile', ['uses' => 'RecipeMobileController@show']);
+    $router->get('recipes/{id}/frontend', ['uses' => 'RecipeFrontendController@show']);
+    $router->get('recipes/{id}[/{consumer:[A-Za-z]+}]', ['uses' => 'RecipeDefaultController@show']);
 });
