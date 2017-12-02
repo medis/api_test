@@ -18,4 +18,9 @@ class RecipeCuisine extends BaseModel
         return $this->hasMany(Recipe::class);
     }
 
+    public function getQualifiedKeyName()
+    {
+        return $this->getTable().'.title';
+    }
+
 }
