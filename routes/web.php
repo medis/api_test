@@ -28,4 +28,7 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'memory_db'], function () 
 
     // Rate recipe.
     $router->post('rating', ['uses' => 'RatingController@store']);
+
+    // Update recipe
+    $router->post('recipes/{id}', ['uses' => 'RecipeDefaultController@update']);
 });

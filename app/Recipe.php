@@ -10,11 +10,14 @@ class Recipe extends BaseModel
      *
      * @var array
      */
-    protected $fillabel = [
+    protected $fillable = [
         'title', 'slug', 'short_title', 'marketing_description', 'calories_kcal',
         'protein_grams', 'fat_grams', 'carbs_grams', 'bulletpoint1',
         'bulletpoint2', 'bulletpoint3', 'preparation_time_minutes',
-        'shelf_life_days', 'in_your_box', 'gousto_reference'
+        'shelf_life_days', 'in_your_box', 'gousto_reference',
+        'box_type_id', 'recipe_diet_type_id', 'season_id', 'base_id',
+        'protein_source_id', 'equipment_needed_id', 'origin_country_id',
+        'recipe_cuisine_id'
     ];
 
     public function ratings() {
