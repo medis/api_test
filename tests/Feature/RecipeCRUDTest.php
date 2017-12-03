@@ -116,15 +116,21 @@ class RecipeCRUDTest extends TestCase
     }
 
     /** @test */
-    public function new_recipe_must_contain_unique_title() {
+    public function new_recipe_must_contain_correct_data() {
         $post = [
+            // Test unique title.
             'title' => $this->recipe->title,
             'short_title' => 'New',
-            'carbs_grams' => 12
+            'carbs_grams' => 12,
+            // Test relationship validity.
+            'season_id' => 300
         ];
 
         $this->post("/api/v1/recipes", $post)
              ->seeStatusCode(422)
-             ->seeJsonContains(['title' => ['The title has already been taken.']]);
+             ->seeJsonContains([
+                 'title' => ['The title has already been taken.'],
+                 'season_id' => ['The selected season id is invalid.'],
+             ]);
     }
 }
