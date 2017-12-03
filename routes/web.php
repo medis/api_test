@@ -29,6 +29,12 @@ $router->group(['prefix' => 'api/v1', 'middleware' => 'memory_db'], function () 
     // Rate recipe.
     $router->post('rating', ['uses' => 'RatingController@store']);
 
+    // For following, if filtered data needs to be returned for specific consumer,
+    // Duplicate style from above. Otherwise default data structure will be returned.
+
     // Update recipe
     $router->post('recipes/{id}', ['uses' => 'RecipeDefaultController@update']);
+
+    // Create recipe
+    $router->post('recipes', ['uses' => 'RecipeDefaultController@store']);
 });

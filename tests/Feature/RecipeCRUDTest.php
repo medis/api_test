@@ -101,4 +101,30 @@ class RecipeCRUDTest extends TestCase
             ->seeStatusCode(422)
             ->seeJsonContains(['id' => ['The selected id is invalid.']]);
     }
+
+    /** @test */
+    public function a_user_can_create_recipe() {
+        $post = [
+            'title' => 'New recipe',
+            'short_title' => 'New',
+            'carbs_grams' => 12
+        ];
+
+        $this->post("/api/v1/recipes", $post)
+             ->seeStatusCode(200)
+             ->seeJsonContains($post);
+    }
+
+    /** @test */
+    public function new_recipe_must_contain_unique_title() {
+        $post = [
+            'title' => $this->recipe->title,
+            'short_title' => 'New',
+            'carbs_grams' => 12
+        ];
+
+        $this->post("/api/v1/recipes", $post)
+             ->seeStatusCode(422)
+             ->seeJsonContains(['title' => ['The title has already been taken.']]);
+    }
 }

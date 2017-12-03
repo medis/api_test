@@ -18,7 +18,7 @@ class RecipeMobileResource extends Resource
             'id' => $this->id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'box_type' => $this->boxType->title,
+            'box_type' => optional($this->boxType)->title,
             'title' => $this->title,
             'short_title' => $this->short_title,
             'marketing_description' => $this->marketing_description,
