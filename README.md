@@ -22,6 +22,8 @@ Update existing recipe<br/>
 `curl -X POST -F 'title="New title"' -F 'id=1' 'http://localhost:8000/api/v1/recipes/1'`<br/><br/>
 Store a new recipe<br/>
 `curl -X POST -F 'title="New title"' -F 'short_title="New"' 'http://localhost:8000/api/v1/recipes'`<br/><br/>
+Run tests in root folder<br/>
+`phpunit`<br/>
 # Why Lumen web application framework?<br/>
 I chose Lumen because I am a big fan of Laravel and this solution needed to be just an API, hence why I chose Lumen. I do believe Laravel is getting bigger every day, getting more and more support from the community and the coding experience is just superb. Also you guys mentioned you are using Laravel/Lumen.<br/>
 # How my solution would cater for a different API consumers that require different recipe data<br/>
