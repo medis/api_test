@@ -15,6 +15,7 @@ class RatingMigration extends Migration
     {
         Schema::create('ratings', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('recipe_id')->index()->nullable();
             $table->ipAddress('ip');
             $table->unsignedTinyInteger('rating');
             $table->boolean('enabled')->default(TRUE);

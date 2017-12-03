@@ -18,6 +18,13 @@ class RecipeCuisine extends BaseModel
         return $this->hasMany(Recipe::class);
     }
 
+    /**
+     * Change qualified name from id to title.
+     * This allows to use ->find(<title>),
+     * which means we can use SEO-friendly paths.
+     *
+     * @return string
+     */
     public function getQualifiedKeyName()
     {
         return $this->getTable().'.title';

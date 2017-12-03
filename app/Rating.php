@@ -11,7 +11,7 @@ class Rating extends BaseModel
      * @var array
      */
     protected $fillable = [
-        'ip', 'rating'
+        'recipe_id', 'ip', 'rating'
     ];
 
     public function recipe() {

@@ -55,4 +55,14 @@ class RecipeCRUDTest extends TestCase
                 'bulletpoint2' => $this->recipe->bulletpoint2
             ]);
     }
+
+    /** @test */
+    public function a_user_can_fetch_recipes_by_cuisine() {
+        $cuisine = 'asian';
+        $recipe = \App\RecipeCuisine::find($cuisine)->recipes()->first();
+        $this->get("/api/v1/cuisine/{$cuisine}")
+            ->seeStatusCode(200)
+            ->seeJsonContains(['title' => $recipe->title]);
+        // Whether the pagination is working correctly is tested by Lumen/Laravel.
+    }
 }
