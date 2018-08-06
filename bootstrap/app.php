@@ -29,6 +29,17 @@ $app->withEloquent();
 
 /*
 |--------------------------------------------------------------------------
+| Load configuration
+|--------------------------------------------------------------------------
+|
+| Here we will load configuration.
+|
+*/
+
+$app->configure('graphql');
+
+/*
+|--------------------------------------------------------------------------
 | Register Container Bindings
 |--------------------------------------------------------------------------
 |
@@ -85,6 +96,7 @@ $app->singleton(
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
+$app->register(Folklore\GraphQL\LumenServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
