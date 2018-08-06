@@ -58,7 +58,9 @@ return [
     /*
      * Any middleware for the 'graphql' route group
      */
-    'middleware' => [],
+    'middleware' => [
+        'memory_db'
+    ],
 
     /**
      * Any middleware for a specific 'graphql' schema
@@ -124,7 +126,7 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-
+                'boxtype' => 'App\GraphQL\Query\BoxTypeQuery'
             ],
             'mutation' => [
 
@@ -181,7 +183,7 @@ return [
      * ]
      */
     'types' => [
-
+        'App\GraphQL\Type\BoxTypeType'
     ],
 
     /*
