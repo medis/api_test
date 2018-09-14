@@ -1,7 +1,4 @@
 [![CircleCI](https://circleci.com/gh/medis/api_test.svg?style=svg)](https://circleci.com/gh/medis/api_test)
-
-# Requirements<br/>
-PHP 7.0+, Lumen (5.5.2)<br/><br/>
 # Installation<br/>
 run in root folder:<br/>
 `php -S localhost:8000 -t public`<br/><br/>
