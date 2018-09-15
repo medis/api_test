@@ -38,6 +38,8 @@ $app->withEloquent();
 
 $app->configure('graphql');
 
+// For Redis.
+$app->configure('database');
 /*
 |--------------------------------------------------------------------------
 | Register Container Bindings
