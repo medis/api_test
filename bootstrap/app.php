@@ -38,8 +38,9 @@ $app->withEloquent();
 
 $app->configure('graphql');
 
-// For Redis.
-$app->configure('database');
+//$app->configure('database');
+
+//$app->configure('cache');
 /*
 |--------------------------------------------------------------------------
 | Register Container Bindings
@@ -99,7 +100,6 @@ $app->singleton(
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 $app->register(Folklore\GraphQL\LumenServiceProvider::class);
-$app->register(Illuminate\Redis\RedisServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------

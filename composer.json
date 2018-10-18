@@ -9,9 +9,7 @@
         "laravel/lumen-framework": "5.7.*",
         "vlucas/phpdotenv": "~2.2",
         "league/csv": "^9.0",
-        "folklore/graphql": "dev-develop#66e92331ff677cf02d2ecfecec8103ada965fbad",
-        "illuminate/redis": "5.7.*",
-        "predis/predis": "^1.1"
+        "folklore/graphql": "dev-develop#66e92331ff677cf02d2ecfecec8103ada965fbad"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
